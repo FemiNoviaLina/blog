@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/images/blog.ico" type="image/x-icon">
     <title>Blog</title>
-    <link href="assets/styles/style.css" rel="stylesheet">
+    <link href="/assets/styles/style.css" rel="stylesheet">
 </head>
-<body class="font-sans">
-    <header class="sticky w-full px-8 py-4 flex justify-between flex-auto">
-        <a href="/index.html" class="flex items-center">
-            <img src="assets/images/blog-logo.png" alt="Blog Homepage" class="w-8 mr-2">
+<body">
+    <nav class="sticky top-0 w-full px-8 py-4 flex justify-between flex-auto bg-white">
+        <a href="/" class="flex items-center">
+            <img src="/assets/images/blog-logo.png" alt="Blog Homepage" class="w-8 mr-4">
             <h1 class="text-3xl font-bold w-full">Blog</h1>
         </a>
         <div class="relative w-64">
             <input class="w-64 border pl-10 pr-6 py-2 rounded-full border-gray-700 absolute top-0 left-0" type="text" name="search" id="search" placeholder="search">
-            <img src="assets/images/search.svg" alt="search" class="h-5 w-auto absolute top-3 left-3">
+            <img src="/assets/images/search.svg" alt="search" class="h-5 w-auto absolute top-3 left-3">
         </div>
+    </nav>
+    <header class="mx-8 my-2 rounded-lg bg-black text-white flex justify-between">
+        <div class="self-center p-8">
+            <h2 class="text-3xl font-bold mb-2">Welcome to Blog!</h2>
+            <p class="mb-4">Read post from all users or create your own post here.</p>
+            <a href="/post/create"><button class="px-4 py-1 border border-white rounded-lg hover:bg-white hover:text-black transition-all duration-300">+ Create Post</button></a>
+        </div>
+        <img src="/assets/images/blog-logo.png" alt="Blog Logo" class="invert w-32 self-end">
     </header>
     <main class="mx-8 my-4 flex gap-x-10">
         <section class="basis-2/3">
@@ -28,7 +36,7 @@
             <div id="popular"></div>
         </aside>
     </main>
-    <footer class="w-full bg-black text-white p-4 text-center">
+    <footer class="w-full bg-black text-white p-4 text-center relative bottom-0">
         Copyright 2023 by <a href="https://github.com/FemiNoviaLina" class="underline">FemiNoviaLina</a>. All Rights Reserved.
     </footer>
 </body>
