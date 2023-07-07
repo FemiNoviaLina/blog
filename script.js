@@ -40,11 +40,13 @@ const showAllArticles = (articles) => {
 }
 
 const showPopularArticles = (articles) => {
-    let i = 0;
-    articles.forEach(article => {
+    const colors = [
+        'text-gray-800', 'text-gray-700', 'text-gray-600', 'text-gray-500', 'text-gray-400'
+    ]
+    articles.forEach((article, i) => {
         popularContainer.innerHTML += `
         <a href="/post/?id=${article.id}" class="flex align-middle">
-            <h2 class="text-8xl font-bold mr-3 min-w-[12%] text-center text-gray-${800 - (i++ * 100)}">${i}</h2>
+            <h2 class="text-8xl font-bold mr-3 min-w-[12%] text-center ${colors[i]}">${i + 1}</h2>
             <div class="mt-3">
                 <h3 class="text-lg font-bold">${article.title}</h3>
                 <p class="text-justify h-12 overflow-hidden text-ellipsis">${article.content}</p>
