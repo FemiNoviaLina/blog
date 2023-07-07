@@ -29,7 +29,7 @@ const getPost = id => {
 
 const showPost = post => {
     titleText.innerHTML = post.title;
-    contentText.innerHTML = post.content.replace(/(?:\r\n|\r|\n)/g, '<br><br>');
+    contentText.innerHTML = post.content.replace(/(?:\r\n|\r|\n)/g, '<br>');
     likeText.innerHTML = `${post.like} people liked this post`;
     likeIcon.classList.remove('hidden');
     document.title = `Blog: ${post.title}`
