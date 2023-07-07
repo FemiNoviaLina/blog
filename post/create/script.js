@@ -23,14 +23,14 @@ createBlogForm.addEventListener('submit', event => {
         if(response.status == 400) throw 'Incomplete data';
         return response.json();
     }).then(data => {
-        window.location.replace('/?success=true');
+        window.location.replace(`/?id=${data.id}&success=true`);
     }).catch(err => {
         if(err == 'Incomplete data') showErrorMessage('Please fill both Title and Content');
         else showErrorMessage('Something went wrong. Please try again.')
     });
 
     event.preventDefault();
-})
+});
 
 const showErrorMessage = message => {
     const alert = document.getElementById('alert');
@@ -46,4 +46,4 @@ const showErrorMessage = message => {
         alert.classList.add('hidden')
         event.preventDefault();
     })
-}
+};
