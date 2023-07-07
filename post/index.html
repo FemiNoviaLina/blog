@@ -21,9 +21,15 @@
     <main class="mx-32 mt-8 mb-16">
         <div id="message"></div>
         <H1 id="title" class="text-4xl font-bold mb-2"></H1>
-        <div class="mb-6 flex align-middle">
-            <img id="like" src="/assets/images/like.svg" alt="like post" class="mr-2 w-5 opacity-50 hover:cursor-pointer transition-all duration-300 hidden">
-            <p id="likes-count" class="text-gray-500 text-sm"></p>
+        <div class="flex gap-5">
+            <div class="mb-6 flex align-middle">
+                <img id="like" src="/assets/images/like.svg" alt="like post" class="mr-2 w-5 opacity-50 hover:cursor-pointer transition-all duration-300 hidden">
+                <p id="likes-count" class="text-gray-500 text-sm"></p>
+            </div>
+            <div id="edit" class="mb-6 flex align-middle hover:cursor-pointer">
+                <img id="edit-icon" src="/assets/images/edit.svg" alt="edit post" class="mr-2 w-5 opacity-50 transition-all duration-300 hidden">
+                <p id="edit-text" class="text-gray-500 text-sm hidden">Edit this post</p>
+            </div>
         </div>
         <p id="content" class="text-justify"></p>
     </main>
