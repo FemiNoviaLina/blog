@@ -51,7 +51,7 @@ updateBlogForm.addEventListener('submit', event => {
         body: JSON.stringify(data), 
     }).then(response => response.json()
     ).then( _ => {
-        window.location.replace(`/post/?id=${id}&success=true`);
+        window.location.href = `/post/?id=${id}&success=true`;
     }).catch( _ => {
         showErrorMessage('Something went wrong. Please try again.')
     });
@@ -73,5 +73,5 @@ const showErrorMessage = message => {
     })
 };
 
-if(id == null && id == undefined) window.location.replace('/');
+if(id == null && id == undefined) window.location.href = '/';
 else fetchArticle(id);

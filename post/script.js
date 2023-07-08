@@ -95,10 +95,10 @@ likeIcon.addEventListener('click', event => {
 })
 
 editLink.addEventListener('click', event => {
-    window.location.replace(`/post/update/?id=${id}`);
+    window.location.href = `/post/update/?id=${id}`;
 })
 
-if(id == null  && id == undefined) window.location.replace('/');
+if(id == null  && id == undefined) window.location.href = '/';
 else getPost(id);
 
 if(localStorage.getItem(id) != null) likeIcon.classList.add('clicked-like');

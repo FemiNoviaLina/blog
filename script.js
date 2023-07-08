@@ -37,7 +37,7 @@ const showAllArticles = (articles) => {
         </a>
         `
     })
-}
+};
 
 const showPopularArticles = (articles) => {
     const colors = [
@@ -58,6 +58,6 @@ const showPopularArticles = (articles) => {
         </a>
         `
     })
-}
+};
 
 fetchArticles();

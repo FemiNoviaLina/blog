@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/assets/images/blog.ico" type="image/x-icon">
-    <title>Blog: </title>
+    <title>Blog</title>
     <link href="/assets/styles/style.css" rel="stylesheet">
 </head>
 <body>
@@ -18,20 +18,9 @@
             <img id="search-button" src="/assets/images/search.svg" alt="search" class="h-5 w-auto absolute top-3 left-3">
         </div>
     </nav>
-    <main class="mx-32 mt-8 mb-16">
-        <div id="message"></div>
-        <H1 id="title" class="text-4xl font-bold mb-2"></H1>
-        <div class="flex gap-5">
-            <div class="mb-6 flex align-middle">
-                <img id="like" src="/assets/images/like.svg" alt="like post" class="mr-2 w-5 opacity-50 hover:cursor-pointer transition-all duration-300 hidden">
-                <p id="likes-count" class="text-gray-500 text-sm"></p>
-            </div>
-            <div id="edit" class="mb-6 flex align-middle hover:cursor-pointer">
-                <img id="edit-icon" src="/assets/images/edit.svg" alt="edit post" class="mr-2 w-5 opacity-50 transition-all duration-300 hidden">
-                <p id="edit-text" class="text-gray-500 text-sm hidden">Edit this post</p>
-            </div>
-        </div>
-        <p id="content" class="text-justify"></p>
+    <main class="my-8 mx-32">
+        <h1 id="keyword" class="mb-8 text-3xl font-bold">Search results for ""</h1>
+        <div id="results"></div>
     </main>
     <footer class="w-full bg-black text-white p-4 text-center relative bottom-0">
         Copyright 2023 by <a href="https://github.com/FemiNoviaLina" class="underline">FemiNoviaLina</a>. All Rights Reserved.
