@@ -904,6 +904,10 @@ video {
   background-size: cover;
 }
 
+.bg-right{
+  background-position: right;
+}
+
 .p-2{
   padding: 0.5rem;
 }
@@ -1110,6 +1114,14 @@ video {
     margin-top: 0.25rem;
   }
 
+  .max-lg\:hidden{
+    display: none;
+  }
+
+  .max-lg\:basis-full{
+    flex-basis: 100%;
+  }
+
   .max-lg\:text-6xl{
     font-size: 3.75rem;
     line-height: 1;
@@ -1125,6 +1137,18 @@ video {
   .max-md\:mx-8{
     margin-left: 2rem;
     margin-right: 2rem;
+  }
+
+  .max-md\:hidden{
+    display: none;
+  }
+
+  .max-md\:basis-1{
+    flex-basis: 0.25rem;
+  }
+
+  .max-md\:basis-full{
+    flex-basis: 100%;
   }
 
   .max-md\:grid-cols-2{
