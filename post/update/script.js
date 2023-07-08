@@ -1,7 +1,7 @@
 const params = (new URL(document.location)).searchParams;
 const id = params.get('id');
 
-const token = 'c262f8bc-ed7b-4be1-949f-b084bfbb51a0';
+const token = '65a97e3a-b55e-45be-b017-c77371ca3c60';
 const url = 'https://sistech-api.vercel.app/blog/';
 
 const titleField = document.getElementById('title');
