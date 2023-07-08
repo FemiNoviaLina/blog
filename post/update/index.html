@@ -8,17 +8,17 @@
     <link href="/assets/styles/style.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="sticky top-0 w-full px-8 py-4 flex justify-between flex-auto bg-white z-10">
+    <nav class="sticky top-0 w-full px-8 py-4 flex justify-between flex-auto bg-white z-10 max-md:px-4">
         <a href="/" class="flex items-center">
             <img src="/assets/images/blog-logo.png" alt="Blog Homepage" class="w-8 mr-4">
-            <h1 class="text-3xl font-bold w-full">Blog</h1>
+            <h1 class="text-3xl font-bold w-full max-sm:hidden">Blog</h1>
         </a>
         <div class="relative w-64">
             <input class="w-64 border pl-10 pr-6 py-2 rounded-full border-gray-700 absolute top-0 left-0" type="text" name="search" id="search" placeholder="search">
             <img id="search-button" src="/assets/images/search.svg" alt="search" class="h-5 w-auto absolute top-3 left-3">
         </div>
     </nav>
-    <main class="mx-32 my-2">
+    <main class="mx-32 my-2 max-sm:mx-4 max-lg:mx-8">
         <div id="alert"></div>
         <h2 class="text-3xl mb-4 font-bold">Update Post</h2>
         <form id="update">

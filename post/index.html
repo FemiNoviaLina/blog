@@ -8,21 +8,21 @@
     <link href="/assets/styles/style.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="sticky top-0 w-full px-8 py-4 flex justify-between flex-auto bg-white z-10">
+    <nav class="sticky top-0 w-full px-8 py-4 flex justify-between flex-auto bg-white z-10 max-md:px-4">
         <a href="/" class="flex items-center">
             <img src="/assets/images/blog-logo.png" alt="Blog Homepage" class="w-8 mr-4">
-            <h1 class="text-3xl font-bold w-full">Blog</h1>
+            <h1 class="text-3xl font-bold w-full max-sm:hidden">Blog</h1>
         </a>
         <div class="relative w-64">
             <input class="w-64 border pl-10 pr-6 py-2 rounded-full border-gray-700 absolute top-0 left-0" type="text" name="search" id="search" placeholder="search">
             <img id="search-button" src="/assets/images/search.svg" alt="search" class="h-5 w-auto absolute top-3 left-3">
         </div>
     </nav>
-    <main class="mx-32 mt-8 mb-16">
+    <main class="mx-32 mt-8 mb-16 max-sm:mx-4 max-md:mx-8">
         <div id="message"></div>
         <H1 id="title" class="text-4xl font-bold mb-2"></H1>
-        <div class="flex gap-5">
-            <div class="mb-6 flex align-middle">
+        <div class="flex gap-5 max-sm:flex-col max-sm:gap-2">
+            <div class="mb-6 flex align-middle max-sm:mb-0">
                 <img id="like" src="/assets/images/like.svg" alt="like post" class="mr-2 w-5 opacity-50 hover:cursor-pointer transition-all duration-300 hidden">
                 <p id="likes-count" class="text-gray-500 text-sm"></p>
             </div>
