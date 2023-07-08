@@ -45,9 +45,9 @@ const showPopularArticles = (articles) => {
     ]
     articles.forEach((article, i) => {
         popularContainer.innerHTML += `
-        <a href="/post/?id=${article.id}" class="flex align-middle">
-            <h2 class="text-8xl font-bold mr-3 min-w-[12%] text-center ${colors[i]} max-lg:text-6xl">${i + 1}</h2>
-            <div class="mt-3 max-sm:mt-1 max-lg:mt-1">
+        <a href="/post/?id=${article.id}" class="flex align-middle gap-2">
+            <h2 class="text-8xl font-bold w-[20%] min-w-[20%] text-center ${colors[i]} max-lg:text-6xl max-lg:min-w-[12%] max-lg:w-[12%]">${i + 1}</h2>
+            <div class="mt-2 max-lg:mt-1">
                 <h3 class="text-lg font-bold">${article.title}</h3>
                 <p class="text-justify h-12 overflow-hidden text-ellipsis">${article.content}</p>
                 <div class="flex">
