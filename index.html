@@ -8,36 +8,36 @@
     <link href="/assets/styles/style.css" rel="stylesheet">
 </head>
 <body">
-    <nav class="sticky top-0 w-full px-8 py-4 flex justify-between flex-auto bg-white z-10">
+    <nav class="sticky top-0 w-full px-8 py-4 flex justify-between flex-auto bg-white z-10 max-md:px-4">
         <a href="/" class="flex items-center">
             <img src="/assets/images/blog-logo.png" alt="Blog Homepage" class="w-8 mr-4">
-            <h1 class="text-3xl font-bold w-full">Blog</h1>
+            <h1 class="text-3xl font-bold w-full max-sm:hidden">Blog</h1>
         </a>
         <div class="relative w-64">
             <input class="w-64 border pl-10 pr-6 py-2 rounded-full border-gray-700 absolute top-0 left-0" type="text" name="search" id="search" placeholder="search">
             <img id="search-button" src="/assets/images/search.svg" alt="search" class="h-5 w-auto absolute top-3 left-3">
         </div>
     </nav>
-    <header class="mx-8 my-2 rounded-lg bg-black text-white flex justify-between">
-        <div class="self-center p-8">
+    <header class="mx-8 my-2 rounded-lg bg-black text-white flex justify-between max-md:mx-4">
+        <div class="self-center p-8 max-sm:p-4">
             <h2 class="text-3xl font-bold mb-2">Welcome to Blog!</h2>
             <p class="mb-4">Read post from all users or create your own post here.</p>
             <a href="/post/create"><button class="px-4 py-1 border border-white rounded-lg hover:bg-white hover:text-black transition-all duration-300">+ Create Post</button></a>
         </div>
-        <img src="/assets/images/blog-logo.png" alt="Blog Logo" class="invert w-32 self-end">
+        <img src="/assets/images/blog-logo.png" alt="Blog Logo" class="invert w-32 self-end max-sm:hidden">
     </header>
-    <main class="mx-8 my-4 flex gap-x-10">
+    <main class="mx-8 my-4 flex gap-x-10 max-sm:flex-col-reverse max-md:mx-4">
         <section class="basis-2/3 shrink-0">
             <h2 class="text-xl underline underline-offset-[10px] border-b border-gray-700 py-1 font-bold">All Articles</h2>
-            <div id="all" class="grid grid-cols-3 gap-4 mt-4"></div>
+            <div id="all" class="grid grid-cols-3 gap-4 mt-4 max-sm:grid-cols-1 max-md:grid-cols-2"></div>
         </section>
         <aside class="basis-1/3 min-w-0">
             <h2 class="text-xl underline underline-offset-[10px] border-b border-gray-700 py-1 font-bold">Popular Articles</h2>
             <div id="popular" class="flex flex-col gap-2"></div>
             <div class="my-8 p-4 bg-black rounded-lg text-white content-center">
                 <img class="mx-auto mt-4 mb-8 invert w-24" src="/assets/images/hello.png" alt="hi">
-                <div class="flex justify-between content-center">
-                    <p>Get to know about me</p>
+                <div class="flex justify-between content-center max-md:flex-col">
+                    <p>BTW, Get to know about me</p>
                     <a href="/about/"><button class="py-1 px-4 text-black bg-white font-bold border border-white rounded-md hover:bg-black hover:text-white transition-all duration-300">here</button></a>
                 </div>
             </div>
