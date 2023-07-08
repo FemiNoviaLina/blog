@@ -2,3 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.clicked-like {
+    filter: invert(69%) sepia(66%) saturate(7495%) hue-rotate(336deg) brightness(99%) contrast(90%);
+    opacity: 100%;
+}
