@@ -1122,6 +1122,11 @@ video {
     margin-right: 1rem;
   }
 
+  .max-md\:mx-8{
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .max-md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1146,6 +1151,10 @@ video {
     margin-top: 0.25rem;
   }
 
+  .max-sm\:mb-0{
+    margin-bottom: 0px;
+  }
+
   .max-sm\:hidden{
     display: none;
   }
@@ -1154,8 +1163,20 @@ video {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
+  .max-sm\:flex-col{
+    flex-direction: column;
+  }
+
   .max-sm\:flex-col-reverse{
     flex-direction: column-reverse;
+  }
+
+  .max-sm\:gap-2{
+    gap: 0.5rem;
+  }
+
+  .max-sm\:gap-1{
+    gap: 0.25rem;
   }
 
   .max-sm\:p-4{
