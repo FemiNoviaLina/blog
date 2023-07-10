@@ -3,6 +3,22 @@ const url = 'https://sistech-api.vercel.app/blog/';
 
 const createBlogForm = document.getElementById('create');
 
+const searchButton = document.getElementById('search-button');
+const searchInput = document.getElementById('search');
+
+searchButton.addEventListener('click', event => {
+    event.preventDefault();
+    const keyword = searchInput.value;
+    if(keyword != '') window.location.href = `../../post/search/index.html?key=${keyword}`;
+});
+
+searchInput.addEventListener('keypress', event => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchButton.click();
+    }
+});
+
 createBlogForm.addEventListener('submit', event => {
     const formData = new FormData(event.target);
     const data = {};
@@ -23,7 +39,7 @@ createBlogForm.addEventListener('submit', event => {
         if(response.status == 400) throw 'Incomplete data';
         return response.json();
     }).then(data => {
-        window.location.href = `/post/?id=${data.id}&success=true`;
+        window.location.href = `../index.html?id=${data.id}&success=true`;
     }).catch(err => {
         if(err == 'Incomplete data') showErrorMessage('Please fill both Title and Content');
         else showErrorMessage('Something went wrong. Please try again.')
