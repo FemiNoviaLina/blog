@@ -19,7 +19,7 @@ const searchInput = document.getElementById('search');
 searchButton.addEventListener('click', event => {
     event.preventDefault();
     const keyword = searchInput.value;
-    if(keyword != '') window.location.href = `../../post/search/index.html?key=${keyword}`;
+    if(keyword != '') window.location.href = `../post/search/index.html?key=${keyword}`;
 });
 
 searchInput.addEventListener('keypress', event => {
@@ -47,9 +47,9 @@ const getPost = id => {
 };
 
 const showPost = post => {
-    titleText.innerHTML = post.title;
-    contentText.innerHTML = post.content.replace(/(?:\r\n|\r|\n)/g, '<br>');
-    likeText.innerHTML = `${post.like} people liked this post`;
+    titleText.innerText = post.title;
+    contentText.innerText = post.content.replace(/(?:\r\n|\r|\n)/g, '<br>');
+    likeText.innerText = `${post.like} people liked this post`;
     likeIcon.classList.remove('hidden');
     editIcon.classList.remove('hidden');
     editText.classList.remove('hidden');
@@ -58,13 +58,13 @@ const showPost = post => {
 
 const showMessage = () => {
     const alert = document.getElementById('message');
-    alert.innerHTML = `
+    alert.insertAdjacentHTML("beforeend", `
     <div class="bg-green-500 h-1"></div>
     <div class="py-2 px-4 mb-4 border border-green-500 bg-green-500 text-green-500 bg-opacity-10 flex justify-between align-middle">
         <p><b>Success!</b> Blog post created/modified.</p>
         <p class="font-bold hover:cursor-pointer" id="close-message">X</p>
     </div>
-    `
+    `)
     const closeAlertButton = document.getElementById('close-message');
     closeAlertButton.addEventListener('click', event => {
         alert.classList.add('hidden')
@@ -74,13 +74,13 @@ const showMessage = () => {
 
 const showErrorMessage = message => {
     const alert = document.getElementById('message');
-    alert.innerHTML = `
+    alert.insertAdjacentHTML("beforeend", `
     <div class="bg-red-500 h-1"></div>
     <div class="py-2 px-4 mb-4 border border-red-500 bg-red-500 text-red-500 bg-opacity-10 flex justify-between align-middle">
         <p><b>Error!</b> ${message}</p>
         <p class="font-bold hover:cursor-pointer" id="close-alert">X</p>
     </div>
-    `
+    `);
     const closeAlertButton = document.getElementById('close-alert');
     closeAlertButton.addEventListener('click', event => {
         alert.classList.add('hidden')
@@ -101,7 +101,7 @@ likeIcon.addEventListener('click', event => {
     }).then(response => response.json()
     ).then(data => {
         if(data.error) throw 'Post not Found'
-        likeText.innerHTML = `${data.like} people liked this post`;
+        likeText.innerText = `${data.like} people liked this post`;
         likeIcon.classList.add('clicked-like');
         localStorage.setItem(id, true);
     }).catch(err => {

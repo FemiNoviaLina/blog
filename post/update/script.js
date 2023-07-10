@@ -75,13 +75,13 @@ updateBlogForm.addEventListener('submit', event => {
 
 const showErrorMessage = message => {
     const alert = document.getElementById('alert');
-    alert.innerHTML = `
+    alert.insertAdjacentHTML("beforeend", `
     <div class="bg-red-500 h-1"></div>
     <div class="py-2 px-4 mb-4 border border-red-500 bg-red-500 text-red-500 bg-opacity-10 flex justify-between align-middle">
         <p><b>Error!</b> ${message}</p>
         <p class="font-bold hover:cursor-pointer" id="close-alert">X</p>
     </div>
-    `
+    `);
     const closeAlertButton = document.getElementById('close-alert');
     closeAlertButton.addEventListener('click', event => {
         alert.classList.add('hidden')

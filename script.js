@@ -41,7 +41,7 @@ const fetchArticles = () => {
 
 const showAllArticles = (articles) => {
     articles.forEach(article => {
-        allContainer.innerHTML += `
+        allContainer.insertAdjacentHTML("beforeend", `
         <a href="./post/index.html?id=${article.id}" class="my-2">
             <div class="h-32 bg-slate-800 rounded-lg"></div>
             <h3 class="mt-1 text-lg font-bold">${article.title}</h3>
@@ -51,7 +51,7 @@ const showAllArticles = (articles) => {
                 <p>${article.like} people liked this post</p>
             </div>
         </a>
-        `
+        `)
     })
 };
 
@@ -60,7 +60,7 @@ const showPopularArticles = (articles) => {
         'text-gray-800', 'text-gray-700', 'text-gray-600', 'text-gray-500', 'text-gray-400'
     ]
     articles.forEach((article, i) => {
-        popularContainer.innerHTML += `
+        popularContainer.insertAdjacentHTML("beforeend", `
         <a href="./post/index.html?id=${article.id}" class="flex align-middle gap-2">
             <h2 class="text-8xl font-bold w-[20%] min-w-[20%] text-center ${colors[i]} max-lg:text-6xl max-lg:min-w-[12%] max-lg:w-[12%]">${i + 1}</h2>
             <div class="mt-2 max-lg:mt-1">
@@ -72,7 +72,7 @@ const showPopularArticles = (articles) => {
                 </div>
             </div>
         </a>
-        `
+        `)
     })
 };
 
