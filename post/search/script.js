@@ -7,6 +7,22 @@ const key = params.get('key');
 const resultsContainer = document.getElementById('results');
 const keywordLine = document.getElementById('keyword');
 
+const searchButton = document.getElementById('search-button');
+const searchInput = document.getElementById('search');
+
+searchButton.addEventListener('click', event => {
+    event.preventDefault();
+    const keyword = searchInput.value;
+    if(keyword != '') window.location.href = `../../post/search/index.html?key=${keyword}`;
+});
+
+searchInput.addEventListener('keypress', event => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchButton.click();
+    }
+});
+
 const getResults = key => {
     fetch(url, {
         method: 'GET',
@@ -34,14 +50,14 @@ const showResults = results => {
 
     results.forEach(result => {
         resultsContainer.innerHTML += `
-        <div class="my-4 border-t">
+        <a href="../index.html?id=${result.id}" class="my-4 border-t">
             <h2 class="my-2 text-lg font-bold">${result.title}</h2>
             <p class="text-justify max-h-12 overflow-hidden text-ellipsis">${result.content}</p>
             <div class="my-1 flex">
-                <img class="w-4 mr-2 ${localStorage.getItem(result.id) ? 'clicked-like' : 'opacity-50'}" src="/assets/images/like.svg" alt="like">
+                <img class="w-4 mr-2 ${localStorage.getItem(result.id) ? 'clicked-like' : 'opacity-50'}" src="../../assets/images/like.svg" alt="like">
                 <p>${result.like} people liked this post</p>
             </div>
-        </div>
+        </a>
         `        
     });
 };

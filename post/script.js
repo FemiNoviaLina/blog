@@ -13,6 +13,22 @@ const editText = document.getElementById('edit-text');
 const editIcon = document.getElementById('edit-icon');
 const editLink = document.getElementById('edit');
 
+const searchButton = document.getElementById('search-button');
+const searchInput = document.getElementById('search');
+
+searchButton.addEventListener('click', event => {
+    event.preventDefault();
+    const keyword = searchInput.value;
+    if(keyword != '') window.location.href = `../../post/search/index.html?key=${keyword}`;
+});
+
+searchInput.addEventListener('keypress', event => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchButton.click();
+    }
+});
+
 const getPost = id => {
     fetch(url, {
         method: 'GET',
@@ -95,10 +111,10 @@ likeIcon.addEventListener('click', event => {
 })
 
 editLink.addEventListener('click', event => {
-    window.location.href = `/post/update/?id=${id}`;
+    window.location.href = `./update/index.html?id=${id}`;
 })
 
-if(id == null  && id == undefined) window.location.href = '/';
+if(id == null  && id == undefined) window.location.href = '../index.html';
 else getPost(id);
 
 if(localStorage.getItem(id) != null) likeIcon.classList.add('clicked-like');

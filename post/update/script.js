@@ -8,6 +8,22 @@ const titleField = document.getElementById('title');
 const contentField = document.getElementById('content');
 const updateBlogForm = document.getElementById('update');
 
+const searchButton = document.getElementById('search-button');
+const searchInput = document.getElementById('search');
+
+searchButton.addEventListener('click', event => {
+    event.preventDefault();
+    const keyword = searchInput.value;
+    if(keyword != '') window.location.href = `../../post/search/index.html?key=${keyword}`;
+});
+
+searchInput.addEventListener('keypress', event => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchButton.click();
+    }
+});
+
 const fetchArticle = (id) => {
     fetch(url, {
         method: 'GET',
@@ -51,7 +67,7 @@ updateBlogForm.addEventListener('submit', event => {
         body: JSON.stringify(data), 
     }).then(response => response.json()
     ).then( _ => {
-        window.location.href = `/post/?id=${id}&success=true`;
+        window.location.href = `../index.html?id=${id}&success=true`;
     }).catch( _ => {
         showErrorMessage('Something went wrong. Please try again.')
     });
@@ -73,5 +89,5 @@ const showErrorMessage = message => {
     })
 };
 
-if(id == null && id == undefined) window.location.href = '/';
+if(id == null && id == undefined) window.location.href = '../../index.html';
 else fetchArticle(id);
