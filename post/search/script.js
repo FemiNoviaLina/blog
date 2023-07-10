@@ -45,11 +45,11 @@ const getResults = key => {
 
 const showResults = results => {
     if(results.length == 0) {
-        resultsContainer.innerHTML = '<h1>No post to show.<h1>'  
+        resultsContainer.insertAdjacentHTML("beforeend", '<h1>No post to show.<h1>')  
     }
 
     results.forEach(result => {
-        resultsContainer.innerHTML += `
+        resultsContainer.insertAdjacentHTML("beforeend", `
         <a href="../index.html?id=${result.id}" class="my-4 border-t">
             <h2 class="my-2 text-lg font-bold">${result.title}</h2>
             <p class="text-justify max-h-12 overflow-hidden text-ellipsis">${result.content}</p>
@@ -58,9 +58,9 @@ const showResults = results => {
                 <p>${result.like} people liked this post</p>
             </div>
         </a>
-        `        
+        `);
     });
 };
 
-keywordLine.innerHTML = `Search results for "${key}"`
+keywordLine.innerText = `Search results for "${key}"`
 getResults(key);
