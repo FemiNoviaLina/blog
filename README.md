@@ -32,6 +32,22 @@ cd blog
 
 3. Open the `index.html` file in your browser.
 
+## Modification
+
+1. You should have Tailwind CLI installed.
+
+```bash
+npm install -D tailwindcss
+```
+
+2. Run this command to start building css file.
+
+```bash
+npx tailwindcss -i ./assets/styles/input.css -o ./assets/styles/style.css --watch
+```
+
+3. Make your changes.
+
 ## License
 
 This project is licensed under the [MIT License](/LICENSE).
